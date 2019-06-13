@@ -1,3 +1,5 @@
 #exclude .idea
 
 /.idea/*
+
+/production/*
