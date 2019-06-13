@@ -1,13 +1,14 @@
-import java.nio.Buffer;
 import java.util.BitSet;
 
 public class MemoryBus {
 
+    private MainMemory mainMemory;
     private Cache[] caches = new Cache[2];
     private BufferBlock[] writesBuffer = new BufferBlock[10];
 
-    MemoryBus(){
-
+    MemoryBus(MainMemory mainMemory){
+        System.out.println("Constructor of MemoryBus class");
+        this.mainMemory = mainMemory;
     }
 
     /**
