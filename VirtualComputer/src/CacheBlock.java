@@ -6,8 +6,8 @@ public class CacheBlock {
     private BitSet tag;
     private BitSet validBit;
 
-    CacheBlock(){
-        System.out.println("Constructor of CacheBlock");
+    CacheBlock(int blockSize){
+        System.out.println("Constructor of CacheBlock con block size: "+ blockSize);
     }
 
 

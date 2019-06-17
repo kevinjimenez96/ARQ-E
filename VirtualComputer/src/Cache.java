@@ -1,3 +1,4 @@
+import java.util.BitSet;
 import java.util.HashMap;
 
 public class Cache {
@@ -18,6 +19,56 @@ public class Cache {
         this.CACHE_SIZE = cache_size;
         this.nextLevel = nextLevel;
 
+    }
+
+    /**
+     *
+     * @return
+     */
+    public BitSet searchData(){
+       return new BitSet();
+    }
+
+    /**
+     *
+     * @return
+     */
+    private BitSet searchNextLevel(){
+        return new BitSet();
+    }
+
+    /**
+     *
+     * @param data
+     * @return
+     */
+    private BitSet sendData (BitSet data){
+        return data;
+    }
+
+    /**
+     *
+     * @param address
+     * @return
+     */
+    private BitSet getBlockKey(BitSet address){
+        return new BitSet();
+    }
+
+    /**
+     *
+     * @return
+     */
+    private BitSet read(BitSet data, int Block){
+       return new BitSet();
+    }
+
+    /**
+     *
+     * @return
+     */
+    private BitSet write(BitSet data, int Block){
+        return new BitSet();
     }
 
 }
