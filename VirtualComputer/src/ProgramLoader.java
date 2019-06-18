@@ -1,5 +1,4 @@
 import java.io.File;
-import java.util.BitSet;
 
 public class ProgramLoader {
 
@@ -8,7 +7,7 @@ public class ProgramLoader {
     /**
      *
      */
-    ProgramLoader (){
+    public ProgramLoader (){
         System.out.println("Constructor of ProgramLoader class");
     }
 
@@ -19,7 +18,7 @@ public class ProgramLoader {
      */
     public BitSet loadProgram(File file){
         System.out.println("Load program of Program Loader");
-        return  new BitSet();
+        return  new BitSet(0);
     }
 
     /**

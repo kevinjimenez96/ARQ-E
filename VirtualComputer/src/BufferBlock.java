@@ -1,12 +1,10 @@
-import java.util.BitSet;
-
 public class BufferBlock {
 
     private BitSet data;
 
     private int address;
 
-    BufferBlock(){
+    public BufferBlock(){
         System.out.println("Constructor of Buffer Block");
     }
 

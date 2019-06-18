@@ -1,5 +1,3 @@
-import java.util.BitSet;
-
 public class MainMemory {
 
     private final int BLOCK_SIZE = 32;
@@ -8,7 +6,7 @@ public class MainMemory {
     private BitSet[] dataSegment;
     private BitSet[] codeSegment;
 
-    MainMemory() {
+    public MainMemory() {
         System.out.println("Constructor of MainMemory class");
     }
 
@@ -35,7 +33,7 @@ public class MainMemory {
      */
     public BitSet load(BitSet address){
 
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**
@@ -51,6 +49,6 @@ public class MainMemory {
      */
     public BitSet fetchInstruction (){
 
-        return new BitSet();
+        return new BitSet(0);
     }
 }

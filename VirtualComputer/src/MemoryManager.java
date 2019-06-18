@@ -1,5 +1,3 @@
-import java.util.BitSet;
-
 public class MemoryManager {
 
     private MainMemory mainMemory = new MainMemory();
@@ -8,7 +6,7 @@ public class MemoryManager {
     /**
      *
      */
-    MemoryManager(){
+    public MemoryManager(){
         System.out.println("Constructor of MemoryManager class");
     }
 

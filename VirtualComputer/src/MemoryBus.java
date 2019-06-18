@@ -1,12 +1,10 @@
-import java.util.BitSet;
-
 public class MemoryBus {
 
     private MainMemory mainMemory;
     private Cache[] caches = new Cache[2];
     private BufferBlock[] writesBuffer = new BufferBlock[10];
 
-    MemoryBus(MainMemory mainMemory){
+    public MemoryBus(MainMemory mainMemory){
         System.out.println("Constructor of MemoryBus class");
         this.mainMemory = mainMemory;
     }
@@ -34,7 +32,7 @@ public class MemoryBus {
      */
     public BitSet load(BitSet address){
 
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**
@@ -50,7 +48,7 @@ public class MemoryBus {
      */
     public BitSet fetchInstruction (){
 
-        return new BitSet();
+        return new BitSet(0);
     }
 
 }

@@ -1,9 +1,8 @@
-import java.util.BitSet;
 import java.util.Queue;
 
 public class ReplacementAlgorithm {
 
-    ReplacementAlgorithm(){
+    public ReplacementAlgorithm(){
         System.out.println("Constructor of Replacement Algorithm");
     }
 

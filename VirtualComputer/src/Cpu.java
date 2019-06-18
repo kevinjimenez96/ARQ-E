@@ -1,5 +1,3 @@
-import java.util.BitSet;
-
 public class Cpu {
 
     private long clock;
@@ -9,7 +7,7 @@ public class Cpu {
     /**
      *
      */
-    Cpu(){
+    public Cpu(){
         System.out.println("Constructor of Cpu class");
     }
 
@@ -34,7 +32,7 @@ public class Cpu {
      * @return
      */
     public BitSet load(int adress){
-        return  new BitSet();
+        return  new BitSet(0);
     }
 
 

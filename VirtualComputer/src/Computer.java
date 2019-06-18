@@ -1,12 +1,12 @@
 public class Computer {
 
-    private OperativeSystem operativeSystem = new OperativeSystem();
+    private OperatingSystem operatingSystem = new OperatingSystem();
     private Cpu cpu = new Cpu();
 
     /**
      *
      */
-    Computer(){
+    public Computer(){
         System.out.println("Constructor of Computer class");
     }
 
