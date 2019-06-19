@@ -1,7 +1,7 @@
 public class Cpu {
 
     private long clock;
-    // private LocalBus localBus = new LocalBus();
+    private LocalBus localBus = new LocalBus();
     //private ExpansionBus expansionBus = new ExpansionBus();
 
     /**

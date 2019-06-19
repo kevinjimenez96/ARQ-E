@@ -49,6 +49,23 @@ public class BitSet {
         return value;
     }
 
+    public void setIntToBitSet(int value){
+
+        int mod = 0;
+
+        for(int i = size-1; i >= 0; --i){
+
+            mod = value % 2;
+            if (mod == 1) {
+                this.bitset[i] = true;
+            }else{
+                this.bitset[i] = false;
+            }
+            value = value / 2;
+        }
+
+    }
+
     public boolean[] getBitset() {
         return bitset;
     }
