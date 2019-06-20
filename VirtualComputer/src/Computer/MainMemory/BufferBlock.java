@@ -1,3 +1,7 @@
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
+
 public class BufferBlock {
 
     private BitSet data;

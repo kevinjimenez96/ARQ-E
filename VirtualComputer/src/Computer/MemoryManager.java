@@ -1,3 +1,9 @@
+package Computer;
+
+import Computer.MainMemory.MainMemory;
+import Computer.MainMemory.MemoryBus;
+import Computer.Utils.BitSet;
+
 public class MemoryManager {
 
     private MainMemory mainMemory = new MainMemory();
@@ -7,7 +13,7 @@ public class MemoryManager {
      *
      */
     public MemoryManager(){
-        System.out.println("Constructor of MemoryManager class");
+        System.out.println("Constructor of Computer.MemoryManager class");
     }
 
     /**

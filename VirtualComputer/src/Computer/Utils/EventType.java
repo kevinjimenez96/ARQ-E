@@ -1,6 +1,8 @@
-public enum OpCode {
+package Computer.Utils;
 
-    //Faltan algunas instrucciones signed/unsigned
+import Computer.Computer;
+
+public enum EventType {
 
     ADD,
     ADDI,

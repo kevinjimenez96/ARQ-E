@@ -1,3 +1,7 @@
+package Computer.CPU;
+
+import Computer.Utils.BitSet;
+
 public class ThreeOpInstruction extends Instruction{
 
     private BitSet secondOperand;

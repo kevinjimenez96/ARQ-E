@@ -1,3 +1,7 @@
+package Computer.CPU;
+
+import Computer.Utils.BitSet;
+
 public class Registers {
 
     private static final int ZERO_REGISTER = 0;

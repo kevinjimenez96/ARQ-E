@@ -1,3 +1,7 @@
+package Computer;
+
+import Computer.Utils.BitSet;
+
 import java.io.File;
 
 public class ProgramLoader {
@@ -8,7 +12,7 @@ public class ProgramLoader {
      *
      */
     public ProgramLoader (){
-        System.out.println("Constructor of ProgramLoader class");
+        System.out.println("Constructor of Computer.ProgramLoader class");
     }
 
     /**

@@ -1,3 +1,7 @@
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
+
 import java.util.HashMap;
 
 public class Cache {

@@ -1,3 +1,7 @@
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
+
 public class MainMemory {
 
     private final int BLOCK_SIZE = 32;
@@ -7,7 +11,7 @@ public class MainMemory {
     private BitSet[] codeSegment;
 
     public MainMemory() {
-        System.out.println("Constructor of MainMemory class");
+        System.out.println("Constructor of Computer.MainMemory.Computer.MainMemory class");
     }
 
     /**

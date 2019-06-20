@@ -1,14 +1,18 @@
-public class Cpu {
+package Computer.CPU;
+
+import Computer.Utils.BitSet;
+
+public class CPU {
 
     private long clock;
     private LocalBus localBus = new LocalBus();
-    //private ExpansionBus expansionBus = new ExpansionBus();
+    //private Computer.IOModule.ExpansionBus expansionBus = new Computer.IOModule.ExpansionBus();
 
     /**
      *
      */
-    public Cpu(){
-        System.out.println("Constructor of Cpu class");
+    public CPU(){
+        System.out.println("Constructor of Computer.CPU.CPU class");
     }
 
     /**
@@ -64,7 +68,7 @@ public class Cpu {
      * @param instruction
      * @return
      */
-    /*private Instruction decode (BitSet instruction){
+    /*private Computer.CPU.Instruction decode (Computer.Utils.BitSet instruction){
 
     }*/
 
@@ -73,7 +77,7 @@ public class Cpu {
      * @param instruction
      */
     /*
-    private void excecuteALUInstruction(Instruction instruction){
+    private void excecuteALUInstruction(Computer.CPU.Instruction instruction){
 
     }*/
 }

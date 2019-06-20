@@ -1,3 +1,5 @@
+package Computer.Utils;
+
 public class BitSet {
 
     private boolean[] bitset;
@@ -29,7 +31,7 @@ public class BitSet {
         return subBitSet;
     }
 
-    //Crear aquí métodos que sean necesarios para operaciones con BitSet.
+    //Crear aquí métodos que sean necesarios para operaciones con Computer.Utils.BitSet.
 
     public int toInt (){
         int value = 0;

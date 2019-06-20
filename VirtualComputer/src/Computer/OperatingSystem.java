@@ -1,3 +1,7 @@
+package Computer;
+
+import Computer.Utils.BitSet;
+
 import java.io.File;
 
 public class OperatingSystem {

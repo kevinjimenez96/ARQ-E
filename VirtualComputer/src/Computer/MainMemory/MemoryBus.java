@@ -1,3 +1,7 @@
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
+
 public class MemoryBus {
 
     private MainMemory mainMemory;
@@ -5,7 +9,7 @@ public class MemoryBus {
     private BufferBlock[] writesBuffer = new BufferBlock[10];
 
     public MemoryBus(MainMemory mainMemory){
-        System.out.println("Constructor of MemoryBus class");
+        System.out.println("Constructor of Computer.MainMemory.MemoryBus class");
         this.mainMemory = mainMemory;
     }
 
