@@ -9,75 +9,59 @@ public class CPU {
     //private Computer.IOModule.ExpansionBus expansionBus = new Computer.IOModule.ExpansionBus();
 
     /**
+     * This method fetches an instruction that is stored in a certain address.
      *
+     * @param address main memory index from where instruction will be fetched.
      */
-    public CPU(){
-        System.out.println("Constructor of Computer.CPU.CPU class");
+    public void fetchInstruction(int address) {
+
     }
 
     /**
-     *
+     * This method sends
+     */
+    public void executeInstruction() {
+
+    }
+
+    /**
+     * @param address
+     * @return
+     */
+    public BitSet load(int address) {
+        return new BitSet(0);
+    }
+
+
+    /**
      * @param address
      */
-    public void fetchInstruction(int address){
+    public void store(int address, BitSet data) {
 
     }
 
     /**
      *
      */
-    public void excecuteInstruction(){
-
-    }
-
-    /**
-     *
-     * @param adress
-     * @return
-     */
-    public BitSet load(int adress){
-        return  new BitSet(0);
-    }
-
-
-    /**
-     *
-     * @param adress
-     * @return
-     */
-    public void store(int adress, BitSet data){
+    private void executeLoad() {
 
     }
 
     /**
      *
      */
-    private void excecuteLoad(){
+    private void executeStore() {
 
     }
 
     /**
+     * @param codedInstruction to be decoded.
      *
+     * @return Instruction
      */
-    private void excecuteStore(){
-
+    private Instruction decode(BitSet codedInstruction) {
+        return null;
     }
 
-    /**
-     *
-     * @param instruction
-     * @return
-     */
-    /*private Computer.CPU.Instruction decode (Computer.Utils.BitSet instruction){
-
-    }*/
-
-    /**
-     *
-     * @param instruction
-     */
-    /*
-    private void excecuteALUInstruction(Computer.CPU.Instruction instruction){
-
-    }*/
 }
+

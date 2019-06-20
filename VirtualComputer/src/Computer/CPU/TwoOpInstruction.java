@@ -6,6 +6,10 @@ public class TwoOpInstruction extends Instruction{
 
     private BitSet secondOperand;
 
+    public TwoOpInstruction(Enum OpCode, BitSet firstOperand, BitSet secondOperand){
+
+    }
+
     public BitSet getSecondOperand() {
         return secondOperand;
     }

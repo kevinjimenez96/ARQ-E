@@ -1,7 +1,6 @@
 package Computer.MainMemory;
 
 import Computer.Utils.BitSet;
-
 import java.util.Queue;
 
 public class ReplacementAlgorithm {
@@ -12,10 +11,10 @@ public class ReplacementAlgorithm {
 
     /**
      *
-     * @param cola
-     * @param datos
+     * @param queue
+     * @param data
      */
-    public void replace(Queue<Integer> cola, BitSet datos){
+    public void replace(Queue<Integer> queue, BitSet data){
 
     }
 

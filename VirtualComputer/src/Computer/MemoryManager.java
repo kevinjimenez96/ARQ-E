@@ -1,13 +1,11 @@
 package Computer;
 
 import Computer.MainMemory.MainMemory;
-import Computer.MainMemory.MemoryBus;
 import Computer.Utils.BitSet;
 
 public class MemoryManager {
 
     private MainMemory mainMemory = new MainMemory();
-    private MemoryBus memoryBus = new MemoryBus(mainMemory);
 
     /**
      *
