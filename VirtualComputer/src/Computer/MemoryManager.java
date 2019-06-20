@@ -1,15 +1,17 @@
-import java.util.BitSet;
+package Computer;
+
+import Computer.MainMemory.MainMemory;
+import Computer.Utils.BitSet;
 
 public class MemoryManager {
 
     private MainMemory mainMemory = new MainMemory();
-    private MemoryBus memoryBus = new MemoryBus(mainMemory);
 
     /**
      *
      */
-    MemoryManager(){
-        System.out.println("Constructor of MemoryManager class");
+    public MemoryManager(){
+        System.out.println("Constructor of Computer.MemoryManager class");
     }
 
     /**

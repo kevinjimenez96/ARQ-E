@@ -1,15 +1,16 @@
-import java.util.BitSet;
+package Computer.MainMemory;
 
-public class MainMemory {
+import Computer.Utils.BitSet;
 
-    private final int BLOCK_SIZE = 32;
-    private final int CAPACITY = 32;
-    private BitSet[] stackSegment;
-    private BitSet[] dataSegment;
-    private BitSet[] codeSegment;
+public class MemoryBus {
 
-    MainMemory() {
-        System.out.println("Constructor of MainMemory class");
+    private MainMemory mainMemory;
+    private Cache[] caches = new Cache[2];
+    private BufferBlock[] writesBuffer = new BufferBlock[10];
+
+    public MemoryBus(MainMemory mainMemory){
+        System.out.println("Constructor of Computer.MainMemory.MemoryBus class");
+        this.mainMemory = mainMemory;
     }
 
     /**
@@ -35,7 +36,7 @@ public class MainMemory {
      */
     public BitSet load(BitSet address){
 
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**
@@ -51,6 +52,7 @@ public class MainMemory {
      */
     public BitSet fetchInstruction (){
 
-        return new BitSet();
+        return new BitSet(0);
     }
+
 }

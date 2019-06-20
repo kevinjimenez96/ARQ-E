@@ -1,4 +1,7 @@
-import java.util.BitSet;
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
+
 import java.util.HashMap;
 
 public class Cache {
@@ -12,7 +15,7 @@ public class Cache {
     private ReplacementAlgorithm replacementAlgorithm = new ReplacementAlgorithm();
 
 
-    Cache(int block_size, int buffer_size, int cache_size, Cache nextLevel){
+    public Cache(int block_size, int buffer_size, int cache_size, Cache nextLevel){
 
         this.BLOCK_SIZE = block_size;
         this.BUFFER_SIZE = buffer_size;
@@ -26,7 +29,7 @@ public class Cache {
      * @return
      */
     public BitSet searchData(){
-       return new BitSet();
+       return new BitSet(0);
     }
 
     /**
@@ -34,7 +37,7 @@ public class Cache {
      * @return
      */
     private BitSet searchNextLevel(){
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**
@@ -52,7 +55,7 @@ public class Cache {
      * @return
      */
     private BitSet getBlockKey(BitSet address){
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**
@@ -60,7 +63,7 @@ public class Cache {
      * @return
      */
     private BitSet read(BitSet data, int Block){
-       return new BitSet();
+       return new BitSet(0);
     }
 
     /**
@@ -68,7 +71,7 @@ public class Cache {
      * @return
      */
     private BitSet write(BitSet data, int Block){
-        return new BitSet();
+        return new BitSet(0);
     }
 
 }

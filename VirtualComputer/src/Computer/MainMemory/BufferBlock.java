@@ -1,4 +1,6 @@
-import java.util.BitSet;
+package Computer.MainMemory;
+
+import Computer.Utils.BitSet;
 
 public class BufferBlock {
 
@@ -6,7 +8,7 @@ public class BufferBlock {
 
     private int address;
 
-    BufferBlock(){
+    public BufferBlock(){
         System.out.println("Constructor of Buffer Block");
     }
 

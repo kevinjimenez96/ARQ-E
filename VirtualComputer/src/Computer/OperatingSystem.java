@@ -1,7 +1,10 @@
-import java.io.File;
-import java.util.BitSet;
+package Computer;
 
-public class OperativeSystem {
+import Computer.Utils.BitSet;
+
+import java.io.File;
+
+public class OperatingSystem {
 
     private ProgramLoader programLoader = new ProgramLoader();
 
@@ -9,7 +12,7 @@ public class OperativeSystem {
     /**
      *
      */
-    OperativeSystem(){
+    public OperatingSystem(){
         System.out.println("Constructor of OperativeSystema class");
     }
 
@@ -30,7 +33,7 @@ public class OperativeSystem {
      */
     private BitSet loadProgram(File file){
         System.out.println("Load program");
-        return new BitSet();
+        return new BitSet(0);
     }
 
     /**

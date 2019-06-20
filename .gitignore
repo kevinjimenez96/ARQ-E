@@ -1,3 +1,7 @@
 #exclude .idea
 
 /.idea/*
+
+/production/*
+
+*.iml
