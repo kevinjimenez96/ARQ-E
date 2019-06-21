@@ -4,8 +4,13 @@ import Computer.Utils.BitSet;
 
 public class Instruction {
 
-    private BitSet opCode;
-    private BitSet firstOperator;
+    protected BitSet opCode;
+    protected BitSet firstOperator;
+
+    public Instruction(BitSet opCode, BitSet firstOperator) {
+        this.opCode = opCode;
+        this.firstOperator = firstOperator;
+    }
 
     public BitSet getOpCode() {
         return opCode;
@@ -22,4 +27,6 @@ public class Instruction {
     public void setFirstOperator(BitSet firstOperator) {
         this.firstOperator = firstOperator;
     }
+
+    
 }

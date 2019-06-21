@@ -7,6 +7,12 @@ public class JumpInstruction extends Instruction{
     private BitSet secondOperand;
     private BitSet offset;
 
+    public JumpInstruction(BitSet opCode, BitSet firstOperator, BitSet secondOperand, BitSet offset) {
+        super(opCode, firstOperator);
+        this.secondOperand = secondOperand;
+        this.offset = offset;
+    }
+
     public BitSet getSecondOperand() {
         return secondOperand;
     }
@@ -22,4 +28,5 @@ public class JumpInstruction extends Instruction{
     public void setOffset(BitSet offset) {
         this.offset = offset;
     }
+
 }

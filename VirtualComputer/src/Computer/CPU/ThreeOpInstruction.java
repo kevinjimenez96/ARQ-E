@@ -7,8 +7,10 @@ public class ThreeOpInstruction extends Instruction{
     private BitSet secondOperand;
     private BitSet thirdOperand;
 
-    public ThreeOpInstruction(Enum OpCode, BitSet firstOperand, BitSet secondOperand, BitSet thirdOperand){
-
+    public ThreeOpInstruction(BitSet opCode, BitSet firstOperator, BitSet secondOperand, BitSet thirdOperand) {
+        super(opCode, firstOperator);
+        this.secondOperand = secondOperand;
+        this.thirdOperand = thirdOperand;
     }
 
     public BitSet getSecondOperand() {
@@ -25,5 +27,12 @@ public class ThreeOpInstruction extends Instruction{
 
     public void setThirdOperand(BitSet thirdOperand) {
         this.thirdOperand = thirdOperand;
+    }
+
+    public String toString(){
+        return "OpCode: " + opCode.toString() + "\n" + 
+         "First Operand: " + firstOperator.toString() + "\n" + 
+         "Second Operand: " + secondOperand.toString() + "\n" + 
+         "Third Operand: " + thirdOperand.toString() + "\n"; 
     }
 }
