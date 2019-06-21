@@ -19,4 +19,9 @@ public class TwoOpInstruction extends Instruction{
         this.secondOperand = secondOperand;
     }
 
+    public String toString(){
+        return "OpCode: " + opCode.toString() + "\n" + 
+         "First Operand: " + firstOperator.toString() + "\n" + 
+         "Second Operand: " + secondOperand.toString() + "\n"; 
+    }
 }

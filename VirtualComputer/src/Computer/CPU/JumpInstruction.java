@@ -28,5 +28,10 @@ public class JumpInstruction extends Instruction{
     public void setOffset(BitSet offset) {
         this.offset = offset;
     }
-
+    public String toString(){
+        return "OpCode: " + opCode.toString() + "\n" + 
+         "First Operand: " + firstOperator.toString() + "\n" + 
+         "Second Operand: " + secondOperand.toString() + "\n" + 
+         "Offset: " + offset.toString() + "\n"; 
+    }
 }
