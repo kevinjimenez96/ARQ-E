@@ -1,7 +1,6 @@
 package Computer.CPU;
 
 public enum OpCode {
-
     ADD,
     ADDI,
     SUB,

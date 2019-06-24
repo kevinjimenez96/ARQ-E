@@ -7,7 +7,7 @@ public class JumpInstruction extends Instruction{
     private BitSet secondOperand;
     private BitSet offset;
 
-    public JumpInstruction(BitSet opCode, BitSet firstOperator, BitSet secondOperand, BitSet offset) {
+    public JumpInstruction(OpCode opCode, BitSet firstOperator, BitSet secondOperand, BitSet offset) {
         super(opCode, firstOperator);
         this.secondOperand = secondOperand;
         this.offset = offset;
@@ -33,5 +33,18 @@ public class JumpInstruction extends Instruction{
          "First Operand: " + firstOperator.toString() + "\n" + 
          "Second Operand: " + secondOperand.toString() + "\n" + 
          "Offset: " + offset.toString() + "\n"; 
+    }
+
+
+
+    @Override
+    BitSet getOperando(Operand index) {
+        if (index == Operand.FIRST){
+            return this.firstOperator;
+        }else if(index == Operand.SECOND){
+            return this.secondOperand;
+        }else{
+            return this.offset; 
+        }
     }
 }

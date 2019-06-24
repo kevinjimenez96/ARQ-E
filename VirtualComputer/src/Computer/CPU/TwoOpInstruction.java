@@ -6,7 +6,7 @@ public class TwoOpInstruction extends Instruction{
 
     private BitSet secondOperand;
 
-    public TwoOpInstruction(BitSet opCode, BitSet firstOperator, BitSet secondOperand) {
+    public TwoOpInstruction(OpCode opCode, BitSet firstOperator, BitSet secondOperand) {
         super(opCode, firstOperator);
         this.secondOperand = secondOperand;
     }
@@ -17,6 +17,15 @@ public class TwoOpInstruction extends Instruction{
 
     public void setSecondOperand(BitSet secondOperand) {
         this.secondOperand = secondOperand;
+    }
+
+    @Override
+    BitSet getOperando(Operand index) {
+        if (index == Operand.FIRST){
+            return this.firstOperator;
+        } else {
+            return this.secondOperand;
+        }
     }
 
     public String toString(){
