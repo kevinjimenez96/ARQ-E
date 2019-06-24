@@ -50,7 +50,11 @@ public class Decoder {
                 return new ThreeOpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 33));
             }
         } else if ((opCode.ordinal() >= 32 && opCode.ordinal() <= 40)  || opCode.ordinal() == 16 ) {
+            if(opCode.ordinal() % 2 == 0 ){
             return new TwoOpInstruction(opCode, firstOperand, secondOperand);
+            }else{
+                return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 33));
+            }
         } else if ( opCode.ordinal() == 17 ) {
             return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 33));
         } else if ((opCode.ordinal() >= 32 && opCode.ordinal() <= 40)  || (opCode.ordinal() < 18 && opCode.ordinal() > 15)) {
