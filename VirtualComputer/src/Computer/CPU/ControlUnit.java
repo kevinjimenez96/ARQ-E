@@ -10,12 +10,16 @@ public class ControlUnit {
     private Decoder decoder;
 
 
+    ControlUnit(){
+        this.decoder = new Decoder();
+    }
     /**
      * This method sends a coded instruction to the Decoder so it can be deciphered.
      *
      * @return Instruction This returns an Instruction object with its OpCode and operands.
      */
     public Instruction processInstruction(BitSet codedInstruction){
+        Instruction instruction = decoder.decode(codedInstruction);
         return null;
     }
 

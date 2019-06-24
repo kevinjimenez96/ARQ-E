@@ -8,6 +8,16 @@ public class CPU {
     private LocalBus localBus = new LocalBus();
     //private Computer.IOModule.ExpansionBus expansionBus = new Computer.IOModule.ExpansionBus();
 
+    public void run(){
+        try{
+            while(true){
+            
+            }
+        } catch (Exception e){
+
+        }
+        
+    }
     /**
      * This method fetches an instruction that is stored in a certain address.
      *
