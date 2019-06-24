@@ -15,6 +15,17 @@ public class BitSet {
         this.bitset = bitset.getBitset();
     }
 
+    public BitSet(String bits){
+        this.size = bits.length();
+        this.bitset = new boolean[size];
+        for (int i = 0; i < size; i++) {
+            if(bits.charAt(i) == '1'){
+                bitset[i] = true;
+            }else{
+                bitset[i] = false;
+            }
+        }
+    }
 
     // Hay que contemplar two's complement aquí
     public BitSet subBitSet(int from, int to){
@@ -23,7 +34,7 @@ public class BitSet {
         boolean[] values = new boolean[to-from];
 
         for(int i = from; i < to; ++i){
-            values[i] = this.bitset[i];
+            values[i - from] = this.bitset[i];
         }
 
         subBitSet.setBitset(values);
@@ -82,5 +93,18 @@ public class BitSet {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+
+    public String toString(){
+        String binary = "";
+        for (boolean bit : bitset) {
+            if(bit){
+                binary += "1";
+            }else{
+                binary += "0";
+            }
+        }
+        return binary;
     }
 }
