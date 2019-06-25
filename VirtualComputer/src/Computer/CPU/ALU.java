@@ -12,8 +12,67 @@ public class ALU {
      * This method decides how an instruction should be processed based on its OpCode, and then executes it.
      *
      */
-    public void executeOperation(Instruction instruction){
+    public void executeOperation(OpCode opCode){
+        int firstOperandInteger = firstOperand.toInt();
+        int secondOperandInteger = secondOperand.toInt();
+        int resultInteger = 0;
+        switch(opCode){
+            case ADD:
+            case ADDI:
+                resultInteger = firstOperandInteger + secondOperandInteger;
+            case SUB:
+            case SUBI:
+                resultInteger = firstOperandInteger - secondOperandInteger;
+            case MUL:
+            case MULI:
+                resultInteger = firstOperandInteger * secondOperandInteger;
+            case DIV:
+            case DIVI:
+                resultInteger = firstOperandInteger / secondOperandInteger;
+            case MOD:
+            case MODI:
+                resultInteger = firstOperandInteger % secondOperandInteger;
+            case AND:
+            case ANDI:
+                resultInteger = firstOperandInteger  secondOperandInteger;
+            case OR:
+            case ORI:
+            case XOR:
+            case XORI:
+            case NOT:
+            case NOTI:
+            case SAL:
+            case SALI:
+            case SAR:
+            case SARI:
+            case SLL:
+            case SLLI:
+            case SLR:
+            case SLRI:
+            case SCL:
+            case SCLI:
+            case SCR:
+            case SCRI:
+            case LSB:
+            case LUB:
+            case LSH:
+            case LUH:
+            case LSW:
+            case LUW:
+            case SB:
+            case SH:
+            case SW:
+            case JUMPG:
+            case JUMPGE:
+            case JUMPLS:
+            case JUMPLSE:
+            case CALL:
+            case RET:
+            case SYSCALL:
+        }
 
+        result = new BitSet(32);
+        result.setIntToBitSet(resultInteger);
     }
 
     public BitSet getFirstOperand() {
