@@ -16,8 +16,7 @@ public class CPU {
     public void run(){
         // Aqui se hace el while "infinito"
         BitSet bitSet = new BitSet("00000000011000000001000000000000");
-        localBus.decode(bitSet);
-        
+        this.executeInstruction(localBus.decode(bitSet));
     }
     /**
      * This method fetches an instruction that is stored in a certain address.
@@ -31,8 +30,11 @@ public class CPU {
     /**
      * This method sends
      */
-    public void executeInstruction() {
-
+    public void executeInstruction(Instruction instruction) {
+        OpCode opCode = instruction.opCode;
+        if(opCode.ordinal() <= 18){
+            System.out.println(opCode.ordinal());
+        }
     }
 
     /**
