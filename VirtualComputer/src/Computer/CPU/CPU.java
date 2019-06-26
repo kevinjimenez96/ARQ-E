@@ -5,17 +5,18 @@ import Computer.Utils.BitSet;
 public class CPU {
 
     private long clock;
-    private LocalBus localBus = new LocalBus();
+    private LocalBus localBus;
     //private Computer.IOModule.ExpansionBus expansionBus = new Computer.IOModule.ExpansionBus();
 
-    public void run(){
-        try{
-            while(true){
-            
-            }
-        } catch (Exception e){
+    public CPU(){
+        localBus = new LocalBus();
+        this.run();
+    }
 
-        }
+    public void run(){
+        // Aqui se hace el while "infinito"
+        BitSet bitSet = new BitSet("00000000011000000001000000000000");
+        localBus.decode(bitSet);
         
     }
     /**

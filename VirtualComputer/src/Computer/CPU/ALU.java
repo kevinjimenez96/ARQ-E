@@ -34,7 +34,7 @@ public class ALU {
                 resultInteger = firstOperandInteger % secondOperandInteger;
             case AND:
             case ANDI:
-                resultInteger = firstOperandInteger  secondOperandInteger;
+               // resultInteger = firstOperandInteger  secondOperandInteger;
             case OR:
             case ORI:
             case XOR:

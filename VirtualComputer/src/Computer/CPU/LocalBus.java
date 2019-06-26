@@ -8,6 +8,12 @@ public class LocalBus {
     private ALU alu;
     private ControlUnit controlUnit;
 
+
+    public LocalBus(){
+        alu = new ALU();
+        controlUnit = new ControlUnit();
+    }
+
     /**
      * This method gives the signal to the Control Unit so it can take action
      * on decoding a given instruction.
@@ -16,7 +22,8 @@ public class LocalBus {
      * @return Instruction decoded to its corresponding opCode and its operands.
      */
     public Instruction decode(BitSet codedInstruction) {
-        return null;
+        Instruction instruction = controlUnit.processInstruction(codedInstruction);
+        return instruction;
     }
 
     /**
