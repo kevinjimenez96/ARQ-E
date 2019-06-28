@@ -11,6 +11,7 @@ public class ControlUnit {
 
 
     ControlUnit(){
+        System.out.println("Constructor of LocalBus.ControlUnit class");
         this.decoder = new Decoder();
     }
     /**
@@ -20,7 +21,8 @@ public class ControlUnit {
      */
     public Instruction processInstruction(BitSet codedInstruction){
         Instruction instruction = decoder.decode(codedInstruction);
-        return null;
+        System.out.println(instruction.toString());
+        return instruction;
     }
 
 
