@@ -12,6 +12,10 @@ public class Registers {
         return registers[index];
     }
 
+    public void setRegister(int index, BitSet value){
+        registers[index] = value;
+    }
+
     public BitSet[] getRegistros() {
         return registers;
     }

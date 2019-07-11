@@ -10,13 +10,19 @@ public class ControlUnit {
     private Decoder decoder;
 
 
+    ControlUnit(){
+        System.out.println("Constructor of LocalBus.ControlUnit class");
+        this.decoder = new Decoder();
+    }
     /**
      * This method sends a coded instruction to the Decoder so it can be deciphered.
      *
      * @return Instruction This returns an Instruction object with its OpCode and operands.
      */
     public Instruction processInstruction(BitSet codedInstruction){
-        return null;
+        Instruction instruction = decoder.decode(codedInstruction);
+        System.out.println(instruction.toString());
+        return instruction;
     }
 
 
