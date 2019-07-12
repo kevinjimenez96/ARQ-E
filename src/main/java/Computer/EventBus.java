@@ -7,17 +7,17 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
 
-public class RxBus {
+public class EventBus {
 
-    private static final RxBus INSTANCE = new RxBus();
+    private static final EventBus INSTANCE = new EventBus();
 
     private final Subject<Object, Object> mBusSubject = new SerializedSubject<>(PublishSubject.create());
 
-    public static RxBus getInstance() {
+    public static EventBus getInstance() {
         return INSTANCE;
     }
 
-    private RxBus() {
+    private EventBus() {
     }
 
     public <T> Subscription register(final Class<T> eventClass, Action1<T> onNext) {

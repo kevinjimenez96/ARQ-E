@@ -1,5 +1,7 @@
 package Computer.Utils;
 
+import Computer.EventBus;
+
 import java.util.Objects;
 
 public class Event implements Comparable<Event> {
@@ -32,13 +34,19 @@ public class Event implements Comparable<Event> {
         this.executionDuration = executionDuration;
     }
 
+    public long getExecutionEnd(){ return this.executionStart + (long) this.executionDuration;}
+
+    public void announceEventEnd(){
+        EventBus.getInstance().post(this);
+    }
+
     @Override
     public int compareTo(Event event) {
         int cmp = 0;
-        if (this.executionStart + this.executionDuration < event.getExecutionStart() + event.getExecutionDuration()) {
+        if (this.getExecutionEnd() < event.getExecutionEnd()) {
             cmp = -1;
         } else {
-            if (this.executionStart + this.executionDuration > event.getExecutionStart() + event.getExecutionDuration()) {
+            if (this.getExecutionEnd() > event.getExecutionEnd()) {
                 cmp = 1;
             }
         }
@@ -59,5 +67,14 @@ public class Event implements Comparable<Event> {
     public int hashCode() {
 
         return Objects.hash(type, executionStart, executionDuration);
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "type=" + type +
+                ", executionStart=" + executionStart +
+                ", executionDuration=" + executionDuration +
+                "}\n";
     }
 }

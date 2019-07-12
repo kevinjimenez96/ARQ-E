@@ -29,5 +29,5 @@ public abstract class Instruction {
         this.firstOperator = firstOperator;
     }
 
-    abstract BitSet getOperando(Operand index);
+    abstract BitSet getOperand(Operand index);
 }
