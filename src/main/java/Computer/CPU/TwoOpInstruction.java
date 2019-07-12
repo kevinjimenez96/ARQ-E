@@ -20,7 +20,7 @@ public class TwoOpInstruction extends Instruction{
     }
 
     @Override
-    BitSet getOperando(Operand index) {
+    BitSet getOperand(Operand index) {
         if (index == Operand.FIRST){
             return this.firstOperator;
         } else {

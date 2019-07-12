@@ -38,7 +38,7 @@ public class JumpInstruction extends Instruction{
 
 
     @Override
-    BitSet getOperando(Operand index) {
+    BitSet getOperand(Operand index) {
         if (index == Operand.FIRST){
             return this.firstOperator;
         }else if(index == Operand.SECOND){
@@ -47,4 +47,5 @@ public class JumpInstruction extends Instruction{
             return this.offset; 
         }
     }
+
 }
