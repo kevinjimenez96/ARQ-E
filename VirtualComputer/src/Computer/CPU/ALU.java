@@ -8,6 +8,12 @@ public class ALU {
     private BitSet secondOperand;
     private BitSet result;
 
+    ALU(){
+        firstOperand = new BitSet(32);
+        secondOperand = new BitSet(32);
+        result = new BitSet(32);
+    }
+
     /**
      * This method decides how an instruction should be processed based on its OpCode, and then executes it.
      *
@@ -18,7 +24,6 @@ public class ALU {
         int resultInteger = 0;
         switch(opCode){
             case ADD:
-                break;
             case ADDI:
                 resultInteger = firstOperandInteger + secondOperandInteger;
                 break;
@@ -28,92 +33,54 @@ public class ALU {
                 resultInteger = firstOperandInteger - secondOperandInteger;
                 break;
             case MUL:
-                break;
             case MULI:
                 resultInteger = firstOperandInteger * secondOperandInteger;
                 break;
             case DIV:
-                break;
             case DIVI:
                 resultInteger = firstOperandInteger / secondOperandInteger;
                 break;
             case MOD:
-                break;
             case MODI:
                 resultInteger = firstOperandInteger % secondOperandInteger;
                 break;
             case AND:
-                break;
             case ANDI:
-               // resultInteger = firstOperandInteger  secondOperandInteger;
+                resultInteger = firstOperandInteger & secondOperandInteger;
                 break;
             case OR:
-                break;
             case ORI:
+                resultInteger = firstOperandInteger | secondOperandInteger;
                 break;
             case XOR:
-                break;
             case XORI:
+                resultInteger = firstOperandInteger ^ secondOperandInteger;
                 break;
             case NOT:
-                break;
             case NOTI:
+                resultInteger = ~firstOperandInteger;
                 break;
             case SAL:
-                break;
             case SALI:
+                resultInteger = firstOperandInteger << secondOperandInteger;
                 break;
             case SAR:
-                break;
             case SARI:
+                resultInteger = firstOperandInteger >> secondOperandInteger;
                 break;
             case SLL:
-                break;
             case SLLI:
+                resultInteger = firstOperandInteger << secondOperandInteger;
                 break;
             case SLR:
-                break;
             case SLRI:
+                resultInteger = firstOperandInteger >>> secondOperandInteger;
                 break;
             case SCL:
-                break;
             case SCLI:
                 break;
             case SCR:
-                break;
             case SCRI:
-                break;
-            case LSB:
-                break;
-            case LUB:
-                break;
-            case LSH:
-                break;
-            case LUH:
-                break;
-            case LSW:
-                break;
-            case LUW:
-                break;
-            case SB:
-                break;
-            case SH:
-                break;
-            case SW:
-                break;
-            case JUMPG:
-                break;
-            case JUMPGE:
-                break;
-            case JUMPLS:
-                break;
-            case JUMPLSE:
-                break;
-            case CALL:
-                break;
-            case RET:
-                break;
-            case SYSCALL:
                 break;
         }
 
