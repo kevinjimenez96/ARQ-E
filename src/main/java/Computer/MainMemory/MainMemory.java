@@ -1,12 +1,14 @@
 package Computer.MainMemory;
 
 
+import Computer.BusInstances;
 import Computer.Utils.BitSet;
 
 public class MainMemory {
 
     private final int BLOCK_SIZE = 32;
     private final int CAPACITY = 32;
+    private MemoryBus memoryBus;
     private BitSet[] stackSegment;
     private BitSet[] dataSegment;
     private BitSet[] codeSegment;
@@ -14,6 +16,7 @@ public class MainMemory {
     public MainMemory() {
         dataSegment = new BitSet[128];
         codeSegment = new BitSet[128];
+        memoryBus = BusInstances.memoryBus;
         System.out.println("Constructor of Computer.MainMemory.Computer.MainMemory class");
     }
 
