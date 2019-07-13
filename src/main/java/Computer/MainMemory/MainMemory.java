@@ -5,6 +5,9 @@ import Computer.BusInstances;
 import Computer.Utils.BitSet;
 
 public class MainMemory {
+    public static final int STACK_LENGTH = 128;
+    public static final int DATA_LENGTH = 512;
+    public static final int WORD_SIZE = 32;
 
     private final int BLOCK_SIZE = 32;
     private final int CAPACITY = 32;
@@ -14,6 +17,7 @@ public class MainMemory {
     private BitSet[] codeSegment;
 
     public MainMemory() {
+        stackSegment = new BitSet[32];
         dataSegment = new BitSet[128];
         codeSegment = new BitSet[128];
         memoryBus = BusInstances.memoryBus;
@@ -21,7 +25,9 @@ public class MainMemory {
     }
 
     /**
-     *
+     * Carga datos a la memoria principal
+     * @param index indice que ndica donde va el dato
+     * @param data datos que se cargaran
      */
     public int loadProgramData(BitSet data, int index) { // Deberia retornar int (?)
         dataSegment[index] = data;
@@ -29,7 +35,9 @@ public class MainMemory {
     }
 
     /**
-     *
+     * Carga una instruccion a la memoria principal
+     * @param index indice que ndica donde va la instruccion
+     * @param instruction instruccion que sera cargara
      */
     public int loadProgramInstruction(BitSet instruction, int index) { // Deberia retornar int (?)
         codeSegment[index] = instruction;
