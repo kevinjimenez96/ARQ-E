@@ -8,7 +8,6 @@ public class LocalBus {
     private ALU alu;
     private ControlUnit controlUnit;
 
-
     public LocalBus(){
         alu = new ALU();
         controlUnit = new ControlUnit();
