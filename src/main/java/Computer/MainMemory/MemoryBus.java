@@ -4,13 +4,11 @@ import Computer.Utils.BitSet;
 
 public class MemoryBus {
 
-    private MainMemory mainMemory;
-    private Cache[] caches = new Cache[2];
-    private BufferBlock[] writesBuffer = new BufferBlock[10];
+    private BufferBlock[] writesBuffer;
 
-    public MemoryBus(MainMemory mainMemory){
+    public MemoryBus(){
+        writesBuffer = new BufferBlock[10];
         System.out.println("Constructor of Computer.MainMemory.MemoryBus class");
-        this.mainMemory = mainMemory;
     }
 
     /**

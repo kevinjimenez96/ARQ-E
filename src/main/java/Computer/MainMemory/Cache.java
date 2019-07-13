@@ -1,27 +1,25 @@
 package Computer.MainMemory;
 
+import Computer.BusInstances;
 import Computer.Utils.BitSet;
 
 import java.util.HashMap;
 
 public class Cache {
 
-    private final int BLOCK_SIZE;
-    private final int BUFFER_SIZE;
-    private final int CACHE_SIZE;
-    private Cache nextLevel;
+    private final int BLOCK_SIZE = 0;
+    private final int BUFFER_SIZE = 0;
+    private final int CACHE_L1_SIZE = 0;
+    private final int CACHE_L2_SIZE = 0;
+    private final int CACHE_L3_SIZE = 0;
+    private MemoryBus memoryBus;
     private HashMap<Integer, CacheBlock> data;
     private BufferBlock[] writesBuffer = new BufferBlock[10];
     private ReplacementAlgorithm replacementAlgorithm = new ReplacementAlgorithm();
 
 
-    public Cache(int block_size, int buffer_size, int cache_size, Cache nextLevel){
-
-        this.BLOCK_SIZE = block_size;
-        this.BUFFER_SIZE = buffer_size;
-        this.CACHE_SIZE = cache_size;
-        this.nextLevel = nextLevel;
-
+    public Cache(){
+        memoryBus = BusInstances.memoryBus;
     }
 
     /**
