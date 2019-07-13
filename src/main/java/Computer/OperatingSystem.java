@@ -3,6 +3,7 @@ package Computer;
 import Computer.Utils.BitSet;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class OperatingSystem {
 
@@ -12,15 +13,17 @@ public class OperatingSystem {
     /**
      *
      */
-    public OperatingSystem(){
+    public OperatingSystem() throws FileNotFoundException {
         System.out.println("Constructor of OperativeSystema class");
+        File file = new File("C:\\Users\\Usuario\\Desktop\\UCR\\Arqui\\Proyecto\\ARQ-E\\src\\main\\java\\binario.txt");
+        runProgram(file);
     }
 
     /**
      *
      * @param file
      */
-    public void runProgram(File file){
+    public void runProgram(File file) throws FileNotFoundException {
         System.out.println("Program running");
         BitSet pc = this.loadProgram(file);
         this.setPcInRegister(pc);
@@ -31,8 +34,9 @@ public class OperatingSystem {
      * @param file
      * @return
      */
-    private BitSet loadProgram(File file){
+    private BitSet loadProgram(File file) throws FileNotFoundException {
         System.out.println("Load program");
+        programLoader.loadProgram(file);
         return new BitSet(0);
     }
 

@@ -1,5 +1,8 @@
 package Computer.CPU;
 
+import Computer.BusInstances;
+import Computer.IOModule.ExpansionBus;
+import Computer.MainMemory.Cache;
 import Computer.Utils.BitSet;
 
 import static Computer.CPU.Operand.SECOND;
@@ -9,10 +12,14 @@ public class CPU {
 
     private long clock;
     private LocalBus localBus;
-    //private Computer.IOModule.ExpansionBus expansionBus = new Computer.IOModule.ExpansionBus();
+    private ExpansionBus expansionBus;
+    private Cache L3 = new Cache();
+    private Cache L2 = new Cache();
+    private Cache L1 = new Cache();
 
     public CPU(){
-        localBus = new LocalBus();
+        localBus = BusInstances.localBus;
+        expansionBus = BusInstances.expansionBus;
         this.run();
     }
 

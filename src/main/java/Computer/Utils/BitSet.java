@@ -134,6 +134,21 @@ public class BitSet {
         this.size = size;
     }
 
+    public void setValue(int index, boolean value){
+        if(index <= size){
+            this.bitset[index] = value;
+        }else {
+            throw new java.lang.ArrayIndexOutOfBoundsException("Fuera de rango en BitSet");
+        }
+    }
+
+    public boolean getValue(int index){
+        if(index <= size){
+            return this.bitset[index];
+        }else {
+            throw new java.lang.ArrayIndexOutOfBoundsException("Fuera de rango en BitSet");
+        }
+    }
 
     public String toString(){
         String binary = "";
