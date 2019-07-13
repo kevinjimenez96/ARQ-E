@@ -3,6 +3,9 @@ package Computer;
 import Computer.CPU.CPU;
 import Computer.CPU.Decoder;
 import Computer.Utils.BitSet;
+
+import java.io.FileNotFoundException;
+
 public class Computer {
 
     private OperatingSystem operatingSystem;
@@ -15,8 +18,7 @@ public class Computer {
     /**
      *
      */
-    public Computer()
-    {
+    public Computer() throws FileNotFoundException {
         operatingSystem = new OperatingSystem();
         cpu = new CPU();
         System.out.println("Constructor of Computer.Computer class");
