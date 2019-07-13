@@ -11,7 +11,7 @@ public class LocalBus {
 
     public LocalBus(){
         alu = new ALU();
-        controlUnit = new ControlUnit();
+        controlUnit = new ControlUnit(this);
         internalStorage = new Registers();
     }
 

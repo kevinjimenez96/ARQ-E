@@ -13,8 +13,6 @@ public class Registers {
         for (int i = 0; i  < 32; i++) {
             registers[i] = new BitSet(32);
         }
-        registers[1].setIntToBitSet(1);
-        registers[2].setIntToBitSet(1);
     }
 
     public BitSet getRegister(int index){

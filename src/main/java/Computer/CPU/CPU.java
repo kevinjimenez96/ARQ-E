@@ -25,23 +25,8 @@ public class CPU {
 
     public void run(){
         // Aqui se hace el while "infinito"
-        BitSet bitSet = new BitSet("00101001001000010001000000000000");
-        // IF
-        // ID
-        Instruction ins =  localBus.decode(bitSet);
-        System.out.println(ins);
-        // EX
-        localBus.setAluOperands(localBus.getRegisterValue(ins.getOperand(SECOND).toUInt()),
-                                localBus.getRegisterValue(ins.getOperand(THIRD).toUInt()));
-
-
-        localBus.executeOperation(ins.getOpCode());
-        System.out.println(localBus.getAluResult());
-        // MEM
-
-        // WB
-
-
+        BitSet bitSet = new BitSet("00000100001000000000000000000001");
+        localBus.executeIntruction(bitSet);
     }
     /**
      * This method fetches an instruction that is stored in a certain address.

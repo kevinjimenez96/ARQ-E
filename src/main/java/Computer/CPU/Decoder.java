@@ -27,18 +27,18 @@ public class Decoder {
             if(opCode.ordinal() % 2 == 0 ){
                 return new ThreeOpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 21));
             }else{
-                return new ThreeOpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 33));
+                return new ThreeOpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 32));
             }
         } else if ((opCode.ordinal() >= 32 && opCode.ordinal() <= 40)  || opCode.ordinal() == 16 ) {
             if(opCode.ordinal() % 2 == 0 ){
             return new TwoOpInstruction(opCode, firstOperand, secondOperand);
             }else{
-                return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 33));
+                return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 32));
             }
         } else if ( opCode.ordinal() == 17 ) {
-            return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 33));
+            return new TwoOpInstruction(opCode, firstOperand, codedInstruction.subBitSet(11, 32));
         } else if ((opCode.ordinal() >= 32 && opCode.ordinal() <= 40)  || (opCode.ordinal() < 18 && opCode.ordinal() > 15)) {
-            return new JumpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 33));
+            return new JumpInstruction(opCode, firstOperand, secondOperand, codedInstruction.subBitSet(16, 32));
         } else {
             return null;
         }
