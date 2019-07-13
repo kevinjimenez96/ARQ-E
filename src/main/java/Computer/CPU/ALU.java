@@ -9,6 +9,7 @@ public class ALU {
     private BitSet result;
 
     ALU(){
+        System.out.println("Constructor of Computer.ALU class");
         firstOperand = new BitSet(32);
         secondOperand = new BitSet(32);
         result = new BitSet(32);
@@ -28,9 +29,9 @@ public class ALU {
                 resultInteger = firstOperandInteger + secondOperandInteger;
                 break;
             case SUB:
-                break;
             case SUBI:
                 resultInteger = firstOperandInteger - secondOperandInteger;
+                System.out.println(resultInteger);
                 break;
             case MUL:
             case MULI:
@@ -93,6 +94,7 @@ public class ALU {
     }
 
     public void setFirstOperand(BitSet firstOperand) {
+
         this.firstOperand = firstOperand;
     }
 
@@ -101,6 +103,7 @@ public class ALU {
     }
 
     public void setSecondOperand(BitSet secondOperand) {
+
         this.secondOperand = secondOperand;
     }
 

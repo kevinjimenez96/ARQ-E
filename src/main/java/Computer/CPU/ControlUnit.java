@@ -21,7 +21,7 @@ public class ControlUnit {
      */
     public Instruction processInstruction(BitSet codedInstruction){
         Instruction instruction = decoder.decode(codedInstruction);
-        System.out.println(instruction.toString());
+        //System.out.println(instruction.toString());
         return instruction;
     }
 

@@ -2,6 +2,9 @@ package Computer.CPU;
 
 import Computer.Utils.BitSet;
 
+import static Computer.CPU.Operand.SECOND;
+import static Computer.CPU.Operand.THIRD;
+
 public class CPU {
 
     private long clock;
@@ -15,8 +18,23 @@ public class CPU {
 
     public void run(){
         // Aqui se hace el while "infinito"
-        BitSet bitSet = new BitSet("00000000011000000001000000000000");
-        this.executeInstruction(localBus.decode(bitSet));
+        BitSet bitSet = new BitSet("00101001001000010001000000000000");
+        // IF
+        // ID
+        Instruction ins =  localBus.decode(bitSet);
+        System.out.println(ins);
+        // EX
+        localBus.setAluOperands(localBus.getRegisterValue(ins.getOperand(SECOND).toUInt()),
+                                localBus.getRegisterValue(ins.getOperand(THIRD).toUInt()));
+
+
+        localBus.executeOperation(ins.getOpCode());
+        System.out.println(localBus.getAluResult());
+        // MEM
+
+        // WB
+
+
     }
     /**
      * This method fetches an instruction that is stored in a certain address.
@@ -32,9 +50,9 @@ public class CPU {
      */
     public void executeInstruction(Instruction instruction) {
         OpCode opCode = instruction.opCode;
-        if(opCode.ordinal() <= 18){
+        /*if(opCode.ordinal() <= 18){
             System.out.println(opCode.ordinal());
-        }
+        }*/
     }
 
     /**
