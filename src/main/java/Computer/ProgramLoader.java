@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class ProgramLoader {
+    private static final int DATA_LENGTH = 512;
+    private static final int WORD_SIZE = 32;
 
     private MemoryManager memoryManager = new MemoryManager();
 
@@ -28,21 +30,13 @@ public class ProgramLoader {
         Scanner scanner = new Scanner(file);
         String program = scanner.nextLine();
 
-        for(int f=0; f<program.length(); f += 8){
-            BitSet bits = new BitSet(8);
-            for(int i=0; i<8; i++) {
-                char bit = program.charAt(i + f);
-                if(bit == '1'){
-                    bits.setValue(i, true);
-                } else if (bit == '0'){
-                    bits.setValue(i, false);
-                }   else {
-                    System.out.println("Error prro");
-                }
-            }
-            System.out.println(bits.toString());
-        }
+        String data = program.substring(0, DATA_LENGTH * 8);
+        BitSet dataBitSet = new BitSet(data);
+        loadData(dataBitSet);
 
+        String instructions = program.substring(DATA_LENGTH * 8, program.length());
+        BitSet instructionsBitSet = new BitSet(instructions);
+        loadInstructions(instructionsBitSet);
 
         System.out.println("Load program of Program Loader");
         return  new BitSet(0);
@@ -50,10 +44,14 @@ public class ProgramLoader {
 
     /**
      *
-     * @param instruction
+     * @param instructions
      */
-    private void loadInstruction(BitSet instruction){
-        System.out.println("Load instruction of Program Loader");
+    private void loadInstructions(BitSet instructions){
+        System.out.println("----------------------------- INSTRUCTIONS SEGMENT ------------------------------");
+        for(int l=0; l<instructions.getSize(); l += WORD_SIZE){
+            BitSet bits = instructions.subBitSet(l, l+WORD_SIZE);
+            System.out.println(bits.toString());
+        }
     }
 
     /**
@@ -61,7 +59,11 @@ public class ProgramLoader {
      * @param data
      */
     private void loadData(BitSet data){
-        System.out.println("Load data of Load Program");
+        System.out.println("----------------------------- DATA SEGMENT ------------------------------");
+        for(int l=0; l<data.getSize(); l += WORD_SIZE){
+            BitSet bits = data.subBitSet(l, l+WORD_SIZE);
+            System.out.println(bits.toString());
+        }
     }
 
 }
