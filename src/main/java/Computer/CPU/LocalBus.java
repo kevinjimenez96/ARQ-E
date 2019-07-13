@@ -7,6 +7,7 @@ public class LocalBus {
     private Registers internalStorage;
     private ALU alu;
     private ControlUnit controlUnit;
+    public CPU cpu;
 
     public LocalBus(){
         alu = new ALU();
