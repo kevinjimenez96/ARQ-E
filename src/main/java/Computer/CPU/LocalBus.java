@@ -10,7 +10,8 @@ public class LocalBus {
 
     public LocalBus(){
         alu = new ALU();
-        controlUnit = new ControlUnit();
+        controlUnit = new ControlUnit(this);
+        internalStorage = new Registers();
     }
 
     /**
@@ -28,10 +29,10 @@ public class LocalBus {
     /**
      * This method gives the signal to either the ALU or the Control Unit to execute a given instruction, depending on its type.
      *
-     * @param instruction to be executed.
+     * @param opcode to be executed.
      */
-    public void executeOperation(Instruction instruction){
-
+    public void executeOperation(OpCode opcode){
+        alu.executeOperation(opcode);
     }
 
     public Registers getInternalStorage() {
@@ -56,5 +57,36 @@ public class LocalBus {
 
     public void setControlUnit(ControlUnit controlUnit) {
         this.controlUnit = controlUnit;
+    }
+
+    /**
+     *
+     * @param firstOper
+     * @param secondOperand
+     */
+    public void setAluOperands(BitSet firstOper, BitSet secondOperand){
+        alu.setFirstOperand(firstOper);
+        alu.setSecondOperand(secondOperand);
+
+    }
+
+    /**
+     *
+     * @return
+     */
+    public BitSet getAluResult(){
+        return alu.getResult();
+    }
+
+    public void executeIntruction(BitSet instruction){
+        controlUnit.processInstruction(instruction);
+    }
+
+    public BitSet getRegisterValue(int index){
+        return internalStorage.getRegister(index);
+    }
+
+    public void setRegisterValue(int index, BitSet value){
+         internalStorage.setRegister(index,value);
     }
 }

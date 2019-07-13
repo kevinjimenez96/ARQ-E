@@ -8,6 +8,13 @@ public class Registers {
     private BitSet[] registers;
     private BitSet occupiedRegisters;
 
+    Registers(){
+        registers = new BitSet[32];
+        for (int i = 0; i  < 32; i++) {
+            registers[i] = new BitSet(32);
+        }
+    }
+
     public BitSet getRegister(int index){
         return registers[index];
     }

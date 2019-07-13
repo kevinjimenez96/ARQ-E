@@ -47,14 +47,18 @@ public class BitSet {
     public int toInt (){
         int value = 0;
 
-        for(int i = 0; i < this.size; ++i){
-            if (this.bitset[0]) {
-                if (!this.bitset[i]) {
-                    value -= (int) Math.pow(2, i);
+        if(this.bitset[0]){
+            for (int i = 0; i < this.size; ++i) {
+                if (!this.bitset[size - i - 1]) {
+                    value += Math.pow(2, i);
                 }
-            }else{
-                if (this.bitset[i]) {
-                    value += (int) Math.pow(2, i);
+            }
+            value++;
+            value*=-1;
+        }else {
+            for (int i = 0; i < this.size; ++i) {
+                if (this.bitset[size - i - 1]) {
+                    value += Math.pow(2, i);
                 }
             }
         }
@@ -62,19 +66,54 @@ public class BitSet {
         return value;
     }
 
+    public int toUInt (){
+        int value = 0;
+        for (int i = 0; i < this.size; ++i) {
+            if (this.bitset[size - i - 1]) {
+                value += Math.pow(2, i);
+            }
+        }
+        return value;
+    }
+
     public void setIntToBitSet(int value){
 
-        int mod = 0;
+        if (value >= 0 ) {
+            int mod = 0;
 
-        for(int i = size-1; i >= 0; --i){
+            for (int i = size - 1; i >= 0; --i) {
 
-            mod = value % 2;
-            if (mod == 1) {
-                this.bitset[i] = true;
-            }else{
-                this.bitset[i] = false;
+                mod = value % 2;
+                if (mod == 1) {
+                    this.bitset[i] = true;
+                } else {
+                    this.bitset[i] = false;
+                }
+                value = value / 2;
             }
-            value = value / 2;
+        }else{
+            value*=-1;
+            int mod = 0;
+
+            for (int i = size - 1; i >= 0; --i) {
+
+                mod = value % 2;
+                if (mod == 1) {
+                    this.bitset[i] = false;
+                } else {
+                    this.bitset[i] = true;
+                }
+                value = value / 2;
+            }
+            for (int i = size - 1; i >= 0;i-- ){
+                if (this.bitset[i]){
+                    this.bitset[i] = false;
+                }else{
+                    this.bitset[i] = true;
+                    break;
+                }
+
+            }
         }
 
     }

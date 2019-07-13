@@ -15,7 +15,7 @@ public class OperatingSystem {
      */
     public OperatingSystem() throws FileNotFoundException {
         System.out.println("Constructor of OperativeSystema class");
-        File file = new File("C:\\Users\\Usuario\\Desktop\\UCR\\Arqui\\Proyecto\\ARQ-E\\src\\main\\java\\binario.txt");
+        File file = new File("C:\\Users\\kevin\\Code\\ARQ-E\\src\\main\\java\\binario.txt");
         runProgram(file);
     }
 
