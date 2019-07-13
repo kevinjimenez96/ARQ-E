@@ -19,14 +19,21 @@ public class CPU {
 
     public CPU(){
         localBus = BusInstances.localBus;
+        localBus.cpu = this;
         expansionBus = BusInstances.expansionBus;
         this.run();
     }
 
     public void run(){
         // Aqui se hace el while "infinito"
-        BitSet bitSet = new BitSet("00000100001000000000000000000001");
-        localBus.executeIntruction(bitSet);
+        while(true){
+            // fetch
+            BitSet bitSet = new BitSet("00000100001000000000000000000001");
+
+            localBus.executeIntruction(bitSet);
+            break;
+        }
+
     }
     /**
      * This method fetches an instruction that is stored in a certain address.
