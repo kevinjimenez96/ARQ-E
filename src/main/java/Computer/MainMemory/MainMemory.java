@@ -1,5 +1,6 @@
 package Computer.MainMemory;
 
+
 import Computer.Utils.BitSet;
 
 public class MainMemory {
@@ -11,22 +12,24 @@ public class MainMemory {
     private BitSet[] codeSegment;
 
     public MainMemory() {
+        dataSegment = new BitSet[128];
+        codeSegment = new BitSet[128];
         System.out.println("Constructor of Computer.MainMemory.Computer.MainMemory class");
     }
 
     /**
      *
      */
-    public int loadProgramData() { // Deberia retornar int (?)
-
+    public int loadProgramData(BitSet data, int index) { // Deberia retornar int (?)
+        dataSegment[index] = data;
         return 0;
     }
 
     /**
      *
      */
-    public int loadProgramInstruction() { // Deberia retornar int (?)
-
+    public int loadProgramInstruction(BitSet instruction, int index) { // Deberia retornar int (?)
+        codeSegment[index] = instruction;
         return 0;
     }
 

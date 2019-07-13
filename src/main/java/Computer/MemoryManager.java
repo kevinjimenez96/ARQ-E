@@ -21,4 +21,12 @@ public class MemoryManager {
 
     }
 
+    public void loadProgramData(BitSet programData, int index){
+        mainMemory.loadProgramData(programData, index);
+    }
+
+    public void loadProgramInstructions(BitSet programInstruction, int index){
+        mainMemory.loadProgramInstruction(programInstruction, index);
+    }
+
 }
