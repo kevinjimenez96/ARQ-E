@@ -49,5 +49,12 @@ public enum EventType {
     JUMPLSE,
     CALL,
     RET,
-    SYSCALL
+    SYSCALL,
+    CACHE_HIT,
+    CACHE_INSTRUCTION_MISS,
+    CACHE_DATA_MISS,
+    WRITE_BUFFER,
+    WRITE_CACHE,
+    WRITE_MAIN_MEMORY,
+    READ_MAIN_MEMORY
 }

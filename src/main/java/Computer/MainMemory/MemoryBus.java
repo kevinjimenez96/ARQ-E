@@ -5,9 +5,15 @@ import Computer.Utils.BitSet;
 public class MemoryBus {
 
     private BufferBlock[] writesBuffer;
+    private BitSet dataLines;
+    private BitSet addressLines;
+    private BitSet controlLines;
 
     public MemoryBus(){
         writesBuffer = new BufferBlock[10];
+        dataLines = new BitSet(32);
+        addressLines = new BitSet(16);
+        controlLines = new BitSet(4);
         System.out.println("Constructor of Computer.MainMemory.MemoryBus class");
     }
 
